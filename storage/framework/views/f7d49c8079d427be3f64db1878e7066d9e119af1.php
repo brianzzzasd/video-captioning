@@ -1,11 +1,9 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
           <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
-              @csrf
+              <?php echo csrf_field(); ?>
               <label class="file-label">
                 <i class="fa fa-cloud-upload" aria-hidden="true"></i> Browse
                 <input class="d-none" type="file" name="video" id="input">
@@ -34,7 +32,7 @@
               </div>
               <div class="file-link d-none flex-column mt-3 justify-content-center text-center">
                   <form action="/downloadFile" method="POST">
-                    @csrf
+                    <?php echo csrf_field(); ?>
                     <input type="hidden" name="fileName" value="" id="download-file-name">
                     <button type="submit" class="btn btn-info text-white"><i class="fa fa-cloud-download" aria-hidden="true"></i> Click here to download</button>
                   </form>
@@ -282,4 +280,5 @@ const translate = async (sText) => {
 // }
 
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/briankentrepuesto/Sites/video-caption/auto-subtitle-app/resources/views/home.blade.php ENDPATH**/ ?>

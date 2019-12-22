@@ -40,7 +40,7 @@ class VideoCaptionController extends Controller
     	foreach ($subtitles as $subtitle) {
     		$content .= $subtitle['order'] . "\r\n";
     		$content .= $subtitle['start'] . ' --> ' . $subtitle['end'] . "\r\n";
-    		$content .= $subtitle['text'] . "\r\n\r\n";
+    		$content .= $subtitle['japanese'] . "\r\n" . $subtitle['text'] . "\r\n\r\n";
     	}
 
     	$subtitlePath = storage_path() . '/' . Str::random(12) . '.srt';
